@@ -1,0 +1,94 @@
+<div class="jumbotron">
+    <br>
+    serach song:<input [(ngModel)]="searchText" type="text">
+    {{searchText}}
+
+  <!-- <input type="search" [(ngModel)]="searchText" placeholder="Search text">
+  <ul *ngFor="let data of mymusic | filter: myfilter">
+        <li>{{data}}</li>
+      </ul> -->
+
+   <br>
+  <b> US currency:{{25|currency}},   </b> 
+  <b> GB currency:{{25|currency:'EUR'}},</b>
+  <b>Ind currency:{{25|currency:'Rs'}} <br></b> 
+   <br>
+
+  <b> MyPipe: {{"jhon cena" | convertToSpace:'_'}}</b>
+
+<br><br>
+  <b> MyPipe: {{"Karan Mishra" | converToSpace1:'@'}}</b>
+
+  <br>
+  <br>
+  <br>
+  <table border="4" >
+    
+<thead>
+    <td>
+        id
+    </td>
+        <td>
+               name
+            </td>
+            <td>
+                  image
+                 </td>
+    <td>
+        singer
+    </td>
+    <td>
+         category
+        </td>
+        <td>
+               duration
+            </td>
+            <td>
+                url
+            </td>
+            <td>
+                 Date
+                </td>
+            <td>
+                button
+            </td>
+</thead>
+<tbody>
+  
+    <tr *ngFor="let music of mymusic|filter:searchText">
+            <td >
+                    {{music.id}}
+                
+                </td>   
+        <td>
+            {{music.name |converToSpace1:'@'}}
+        </td>
+        <td > 
+             <img [src]="music.image" *ngIf="music.showImage">  
+            </td>
+        <td>
+            {{music.singer}}
+        </td>
+        <td>
+            {{music.category}}
+        </td>
+        <td>
+            {{music.duration}}
+        </td>
+        
+        <td>
+
+            <audio   controls [src]="music.url"></audio>
+        </td>
+        <td>
+
+               {{date | date:'shortDate'}}
+            </td>
+        <td>
+            <button (click)='myfunction(music)'> {{music.showImage?'hide':'show'}}</button>
+        </td>
+    </tr>
+</tbody>
+
+</table>
+</div>
