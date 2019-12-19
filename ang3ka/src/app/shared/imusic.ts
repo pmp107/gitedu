@@ -1,12 +1,10 @@
-export interface imusic{
-
-id:number;
-name:string;
-image:string;
-singer:string;
-category:string;
-duration:number;
-url:string;
-showImage:boolean;
-
+export interface Imusic{
+    isShow:boolean,
+    id:number,
+    name:string,
+    image:string,
+    musicCategory:string,
+    song:string,
+    singer:string,
+   musicurl:string
 }

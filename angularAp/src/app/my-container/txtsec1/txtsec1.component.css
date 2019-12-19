@@ -1,9 +1,10 @@
 .txt-sec{
 
     width: 45%;
-    background-color: antiquewhite;
+    background: rgb(7, 202, 236);
     margin: 10px 5px;
     padding: 10px;
+    float: left;
     /* padding: 0;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif; */
@@ -11,16 +12,30 @@
 .heading-red{
     color: red;
     font-size: 18px;
+    
+}
+
+.txt-sec p{
+    color:rgb(12, 11, 12);
+    font-size: 16px;
     padding: 10px 0;
-    line-height: 20px;
+    line-height: 30px;
 }
 
 .btn-red{
     background: red;
-    color: seashell;
-    padding: 15px;
+    color: orange;
+    padding: 10px 15px;
     border-radius: 50px;
     text-decoration: navajowhite;
     text-decoration: none;
     float: right;
+}
+
+.btn-red:hover{
+    background: black;
+}
+
+.clear{
+    clear:both;
 }

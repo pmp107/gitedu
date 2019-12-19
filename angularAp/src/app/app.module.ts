@@ -7,6 +7,8 @@ import { MyContainerComponent } from './my-container/my-container.component';
 import { TopnavComponent } from './my-container/topnav/topnav.component';
 import { HeaderComponent } from './my-container/header/header.component';
 import { Txtsec1Component } from './my-container/txtsec1/txtsec1.component';
+import { Txtsec2Component } from './my-container/txtsec2/txtsec2.component';
+import { DatabindComponent } from './databind/databind.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { Txtsec1Component } from './my-container/txtsec1/txtsec1.component';
     MyContainerComponent,
     TopnavComponent,
     HeaderComponent,
-    Txtsec1Component
+    Txtsec1Component,
+    Txtsec2Component,
+    DatabindComponent
   ],
   imports: [
     BrowserModule,

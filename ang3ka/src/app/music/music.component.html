@@ -1,94 +1,63 @@
-<div class="jumbotron">
-    <br>
-    serach song:<input [(ngModel)]="searchText" type="text">
-    {{searchText}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    Search song: <input type="text" id="search" name="search" [(ngModel)]='Myfilter'>
+    <br> 
 
-  <!-- <input type="search" [(ngModel)]="searchText" placeholder="Search text">
-  <ul *ngFor="let data of mymusic | filter: myfilter">
-        <li>{{data}}</li>
-      </ul> -->
+   <!-- panikapipe:{{ "Jenelia Dsouza" | convertToSpace:Myfilter}} -->
 
-   <br>
-  <b> US currency:{{25|currency}},   </b> 
-  <b> GB currency:{{25|currency:'EUR'}},</b>
-  <b>Ind currency:{{25|currency:'Rs'}} <br></b> 
-   <br>
 
-  <b> MyPipe: {{"jhon cena" | convertToSpace:'_'}}</b>
+    <table class="table table-striped" *ngIf ="MyMusic && MyMusic.length">
+      
+        <thead>
+            <th>Id</th>
+            <th>Song Name</th>
+            <th>Artist</th>
+            <th>Category</th>
+            <th>Song genre</th>
+            <th>Singer</th>
+            <th>Play Music</th>
+            <th>Hide</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let music of MyMusic | searchMusic:Myfilter"  >
+                <td><a routerLink='detailedMusic/{{music.id}}' title="Get Details">{{music.id}}</a> </td>
+                <td>{{music.name}}</td>
+                <td >
+                    <img  [src]='music.image'style="width: 100px;height: 100px;" *ngIf='music.isShow' [title]='music.name'>
 
-<br><br>
-  <b> MyPipe: {{"Karan Mishra" | converToSpace1:'@'}}</b>
-
-  <br>
-  <br>
-  <br>
-  <table border="4" >
-    
-<thead>
-    <td>
-        id
-    </td>
-        <td>
-               name
-            </td>
-            <td>
-                  image
-                 </td>
-    <td>
-        singer
-    </td>
-    <td>
-         category
-        </td>
-        <td>
-               duration
-            </td>
-            <td>
-                url
-            </td>
-            <td>
-                 Date
                 </td>
-            <td>
-                button
+                <td>{{music.musicCategory}}</td>
+                <td>{{music.song}}</td>
+                <td>{{music.singer}}</td>
+                <td>
+                        <audio controls>
+                                <source [src]='music.musicurl' type="audio/ogg">
+                        </audio>
+                </td>
+                <td>
+                   
+                    <button (click)='toggleImage(music)'>{{music.isShow ? 'Hide':'Show'}}</button>
+                </td>
+                <td>
+                <button (click)='editMusic(music)'>Edit</button> /
+                <button (click)='deleteMusic(music)'>Delete</button>
             </td>
-</thead>
-<tbody>
-  
-    <tr *ngFor="let music of mymusic|filter:searchText">
-            <td >
-                    {{music.id}}
-                
-                </td>   
-        <td>
-            {{music.name |converToSpace1:'@'}}
-        </td>
-        <td > 
-             <img [src]="music.image" *ngIf="music.showImage">  
-            </td>
-        <td>
-            {{music.singer}}
-        </td>
-        <td>
-            {{music.category}}
-        </td>
-        <td>
-            {{music.duration}}
-        </td>
+            </tr>
+            
+           
+               
+
+        </tbody>
         
-        <td>
 
-            <audio   controls [src]="music.url"></audio>
-        </td>
-        <td>
 
-               {{date | date:'shortDate'}}
-            </td>
-        <td>
-            <button (click)='myfunction(music)'> {{music.showImage?'hide':'show'}}</button>
-        </td>
-    </tr>
-</tbody>
+    </table>
 
-</table>
-</div>
+</body>
+</html>

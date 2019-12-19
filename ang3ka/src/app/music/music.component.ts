@@ -1,133 +1,78 @@
 import { Component } from '@angular/core';
-import { imusic } from '../shared/imusic';
-
-
+import { Imusic } from '../Shared/Imusic';
+import { Router } from '@angular/router';
 
 @Component({
-    selector:'app-music',
-    templateUrl:'./music.component.html'
+    selector:"app-muxic",
+    templateUrl:"./music.component.html"
 })
 
-
-export class musicComponent{
-    mymusic:imusic[];
-    myfilter:string;
+export class MusicComponent
+{
    
- public date=new Date();
-    
+MyMusic:Imusic[];
+
+Myfilter:string;
+
+constructor(private r:Router) {
+
    
-    constructor()
-    {
-       
-        flag:Boolean:true;
-        this.mymusic=[{
+    this.MyMusic=[{
+        isShow:true,
+        id:1,
+        name:"tamanche pe disco",
+        image:"../assets/Images/bk.jpg",
+        musicCategory: "pop",
+        song:"Disco",
+        singer:"raftaar",
+        musicurl:"../assets/music/m1.mp3"
 
-            id:1,
-            name:"cute munda",
-            image:"../assets/cutemunda.jpg",
-            singer:"sharry mann",
-            category:"punjabi",
-            duration:3.4,
-            url:"../assets/abc.mp3",
-            showImage:true,
-         
-
-        },
-        {
-            id:2,
-            name:"see you again",
-            image:"../assets/img.jpg",
-            singer:"wiz khalifa",
-            category:"pop",
-            duration:4.3,
-            url:"../assets/abc.mp3",
-            showImage:true,
-           
-        },
-        {
-
-            id:3,
-            name:"humsafar",
-            image:"../assets/img3.jpg",
-            singer:"Arijit singh",
-            category:"Love",
-            duration:4.0,
-            url:"../assets/abc.mp3",
-            showImage:true,
-         
-
-        },
-        {
-
-            id:4,
-            name:"Nikale current",
-            image:"../assets/img4.jpg",
-            singer:"neha Kakkar",
-            category:"punjabi",
-            duration:4.0,
-            url:"../assets/abc.mp3",
-            showImage:true,
-      
-
-        },
-        {
-
-            id:5,
-            name:"high rated gabru",
-            image:"../assets/images.jpg",
-            singer:"guru randhwa",
-            category:"punjabi",
-            duration:4.0,
-            url:"../assets/abc.mp3",
-            showImage:true,
-           
-
-        },
-        {
-
-            id:6,
-            name:"tu jaane na",
-            image:"../assets/img5.jpg",
-            singer:"Atif aslam",
-            category:"sufi",
-            duration:4.0,
-            url:"../assets/abc.mp3",
-            showImage:true,
-           
-
-        },
-        {
-
-            id:7,
-            name:"jane kyun log",
-            image:"../assets/img6.jpg",
-            singer:"Lata Mangeshkar",
-            category:"Devotional",
-            duration:4.0,
-            url:"../assets/abc.mp3",
-            showImage:true,
-          
-
-        }
-    ]
     }
-    
+    ,{
+        isShow:true,
+        id:2,
+        name:"Dhup chik",
+        image:"../assets/Images/ck.jpg",
+        musicCategory: "jazz",
+        song:"Bolly",
+        singer:"raftaar",
+        musicurl:"../assets/music/m1.mp3"
+
+    }
+    ,{
+          isShow:true,
+        id:3,
+        name:"twirk",
+        image:"../assets/Images/dk.jpg",
+        musicCategory: "jazz",
+        song:"Bolly",
+        singer:"raftaar",
+        musicurl:"../assets/music/m1.mp3"
+
+    }
+     ]
+}
+
+toggleImage(MyMusic:Imusic):void
+{
+   // document.getElementById('id').style.visibility = "hidden";
+    MyMusic.isShow=!MyMusic.isShow;
  
-myfunction(mymusic:imusic)
+}
+
+editMusic(music:Imusic)
 {
-    flag:true;
-    mymusic.showImage=!mymusic.showImage;
+    this.r.navigate(['editMusic/'+music.id]);
 }
 
-playsong()
+deleteMusic(music:Imusic)
 {
-
-
-}
-
+    this.r.navigate(['deleteMusic/'+music.id]);
 
 }
 
-    
-
-
+returnmusic():Imusic[]
+{
+    return this.MyMusic;
+}
+}

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "musicapp": {
+    "music-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/musicapp",
+            "outputPath": "dist/music-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,9 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-         "node_modules/bootstrap/dist/css/bootstrap.css"
-
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -69,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "musicapp:build"
+            "browserTarget": "music-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "musicapp:build:production"
+              "browserTarget": "music-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "musicapp:build"
+            "browserTarget": "music-app:build"
           }
         },
         "test": {
@@ -117,15 +115,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "musicapp:serve"
+            "devServerTarget": "music-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "musicapp:serve:production"
+              "devServerTarget": "music-app:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "musicapp"
+  "defaultProject": "music-app"
 }

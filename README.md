@@ -1,2 +1,0 @@
-# gitedu
-edureka tutorials try

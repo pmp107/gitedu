@@ -6,22 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'musicapp';
-  parentCounter:number;
+  title = 'music-app';
 
-  constructor(){
-    this.parentCounter=0;
+  parentIncrement:number=0;
+
+  incrementParent(count)
+  {
+    console.log("Increment: "+count);
+    this.parentIncrement=count;
   }
-incrementparentCounter(count:number)
-{
-  this.parentCounter=count;
 
-}
+  decrementParent(count){
+    console.log("Decrement: "+count);
+    this.parentIncrement=count;
+  }
 
-decrementparentCounter(count:number)
-{
-  this.parentCounter=count;
-
-}
-
+  
 }

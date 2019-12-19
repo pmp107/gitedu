@@ -3,25 +3,41 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { musicComponent } from './music/music.component';
+import { MusicComponent } from './Music/music.component';
+import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
-
 import { CounterComponent } from './counter/counter.component';
-import { ConvertToSpacePipe } from './shared/convert-to-space.pipe';
-import { ConverToSpace1Pipe } from './shared/conver-to-space1.pipe';
-import { FilterPipe } from './shared/filter.pipe';
-
+import { ConvertToSpacePipe } from './Shared/convert-to-space.pipe';
+import { SearchMusicPipe } from './Shared/search-music.pipe';
+import { NavComponent } from './nav/nav.component';
+import { AddMusicComponent } from './add-music/add-music.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { EditMusicComponent } from './edit-music/edit-music.component';
+import { DeleteMusicComponent } from './delete-music/delete-music.component';
+import { DetailedMusicComponent } from './detailed-music/detailed-music.component'
 
 @NgModule({
   declarations: [
-    AppComponent,musicComponent, FilterPipe, CounterComponent, ConvertToSpacePipe, ConverToSpace1Pipe
+    AppComponent,
+    MusicComponent,
+    HeaderComponent,
+    CounterComponent,
+    ConvertToSpacePipe,
+    SearchMusicPipe,
+    NavComponent,
+    AddMusicComponent,
+    PageNotFoundComponent,
+    EditMusicComponent,
+    DeleteMusicComponent,
+    DetailedMusicComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule
-  
+    AppRoutingModule,
+    FormsModule
+    
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,MusicComponent]
 })
 export class AppModule { }

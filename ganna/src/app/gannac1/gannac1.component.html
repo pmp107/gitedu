@@ -1,0 +1,30 @@
+search song<input type="text" [(ngModel)]="myfilter"><br />
+{{myfilter|currency:'USD'}}
+<table class="table table-striped" *ngIf="obj1 && obj1.length">
+  <tr>
+    <th>name</th>
+    <th>Desc</th>
+    <th>Image</th>
+    <th>play/pause</th>
+    <th>Toggle</th>
+  </tr>
+  <tr *ngFor="let obj11 of obj1">
+    <td>{{obj11.name}}</td>
+    <td>{{obj11.city}}</td>
+    <td> <img [src]='obj11.image' *ngIf='obj11.showImage' [title]='obj11.name'></td>
+    <!-- <td><audio controls>
+        <source src="horse.ogg" type="audio/ogg"></audio>
+    </td> -->
+    <td><audio controls>
+        <source [src]='obj11.music' type="audio/mpeg"> </audio>
+
+    </td>
+
+    <td> <button (click)='toggleImage(obj11)'>{{obj11.showImage?'Hide':'Show' }}</button></td>
+  </tr>
+
+
+
+
+</table>
+<p>gannac1 works!</p>

@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<h1>Details Of Music</h1>
+<table class="table table-striped" border="2">
+<thead>
+        <th>Id</th>
+        <th>Song Name</th>
+        <th>Artist</th>
+        <th>Category</th>
+        <th>Song genre</th>
+        <th>Singer</th>
+        <th>Play Music</th>
+        
+    </thead>
+<tbody><tr>
+    <td>{{obj1.id}}</td>
+    <td>{{obj1.name}}</td>
+    <td >
+        <img  [src]='obj1.image'style="width: 100px;height: 100px;" *ngIf='obj1.isShow' [title]='obj1.name'>
+
+    </td>
+    <td>{{obj1.musicCategory}}</td>
+    <td>{{obj1.song}}</td>
+    <td>{{obj1.singer}}</td>
+    <td>
+            <audio controls>
+                    <source [src]='obj1.musicurl' type="audio/ogg">
+            </audio>
+    </td>
+</tr>
+</tbody>
+</table>
+</body>
