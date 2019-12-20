@@ -1,0 +1,51 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>Music App</title>
+
+</head>
+
+<!-- Comment: <input type="text" [(ngModel)]="myfilter">
+    <br>{{myfilter|currency:'Rs'}}<br>{{flag}}<br> -->
+
+serach song:<input [(ngModel)]="searchText" type="text">
+
+
+
+<table border="2" class="table dark">
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>SONG IMAGE</th>
+        <th>SONG</th>
+        <th>CATEGORY</th>
+        <th>SINGER</th>
+        <th>EVENT</th>
+        <th colspan="2">Action</th>
+    </tr>
+    <tr *ngFor="let music1 of music|filterData:searchText">
+        <td><a routerLink='musicDetails/{{music1.id}}' (click)='detailMusic(music1)'>{{music1.id}}</a></td>
+        <td>{{music1.name}}</td>
+        <td><img [src]='music1.imgUrl' style="width:60px;height:60px;" *ngIf='music1.showImage'></td>
+        <td><audio controls [src]='music1.songUrl'></audio></td>
+        <td>{{music1.category}}</td>
+        <td>{{music1.singer}}</td>
+        <td><button (click)='toggleImage(music1)'>{{music1.showImage?'Hide':'Show'}}</button></td>
+        <td><a href="#" class="btn btn-primary a-btn-slide-text" routerLink='editMusic' (click)='editMusic(music1)'>
+                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                <span><strong>Edit</strong></span>
+            </a> / 
+            <a href="#" class="btn btn-primary a-btn-slide-text" routerLink='deleteMusic' (click)='deleteMusic(music1)'>
+                <span class="glyphicon glyphicon-edit" aria-hidden="true" ></span>
+                <span><strong>Delete</strong></span>
+            </a></td>
+    </tr>
+
+    <!-- <ng-template #notShow>
+                <tr>
+                  Show this only if "show" is not true
+                </tr>
+              </ng-template> -->
+</table>

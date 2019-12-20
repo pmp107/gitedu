@@ -1,0 +1,46 @@
+<div class="container jumbotron" style="text-align:center">
+    <h1>Hero Form:</h1>
+    <form [formGroup]="musicForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="name">Name: </label>
+            <input type="text" id="name" pattern="^[a-zA-Z]+[0-9]{5}" [ngClass]="{ 'is-invalid': f.name.errors }" formControlName="name" required>
+        </div>
+
+        <div *ngIf="f.name.invalid && (f.name.dirty || f.name.touched)" class="alert alert-danger">
+
+            <div *ngIf="f.name.errors.required">
+                Name is required.
+            </div>
+            <div *ngIf="f.name.errors.pattern">
+                Name must be start with character and having 5 digits.
+            </div>
+            
+
+        </div>
+
+        <div class="form-group">
+            <label for="name">Image Url: </label>
+            <input type="text" id="imgUrl" [ngClass]="{ 'is-invalid': f.imgUrl.errors }" formControlName="imgUrl" required>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Song Url: </label>
+            <input type="text" id="songUrl" [ngClass]="{ 'is-invalid': f.songUrl.errors }" formControlName="songUrl" required>
+        </div>
+
+        <div class="form-group">
+            <label for="alterEgo">Singer: </label>
+            <input type="text" id="singer" [ngClass]="{ 'is-invalid': f.singer.errors }" formControlName="singer" required>
+        </div>
+
+
+        <div class="form-group">
+            <label for="alterEgo">Category: </label>
+            <input type="text" id="category" [ngClass]="{ 'is-invalid': f.category.errors }" formControlName="category" required>
+        </div>
+
+        <button type="submit" class="btn btn-success" [disabled]="!musicForm.valid">Submit</button>
+
+    </form>
+</div>
