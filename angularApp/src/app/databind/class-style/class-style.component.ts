@@ -17,5 +17,6 @@ export class ClassStyleComponent implements OnInit {
   }
   ngOnInit() {
   }
+  
 
 }

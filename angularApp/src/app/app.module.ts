@@ -10,6 +10,12 @@ import { Txtsec1Component } from './my-container/txtsec1/txtsec1.component';
 import { Txtsec2Component } from './my-container/txtsec2/txtsec2.component';
 import { DatabindComponent } from './databind/databind.component';
 import { ClassStyleComponent } from './databind/class-style/class-style.component';
+import { PuSpliceComponent } from './pu-splice/pu-splice.component';
+import { BootstpComponent } from './bootstp/bootstp.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//ngxbootstrap 
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
   declarations: [
@@ -20,11 +26,16 @@ import { ClassStyleComponent } from './databind/class-style/class-style.componen
     Txtsec1Component,
     Txtsec2Component,
     DatabindComponent,
-    ClassStyleComponent
+    ClassStyleComponent,
+    PuSpliceComponent,
+    BootstpComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    BsDatepickerModule.forRoot(),
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
