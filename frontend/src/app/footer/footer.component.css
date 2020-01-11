@@ -1,0 +1,18 @@
+footer {
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    background-color: #8aaddb;
+    bottom: 0px;
+    left: 0px;
+}
+
+.copyright {
+    position: sticky;
+    width: 100%;
+    color: #111010;
+    line-height: 40px;
+    font-size: 15px;
+    text-align: center;
+    bottom:0;
+}

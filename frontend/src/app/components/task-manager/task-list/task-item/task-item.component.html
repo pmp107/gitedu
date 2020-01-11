@@ -1,0 +1,8 @@
+
+<form  >
+ {{ csrf }}
+<img src="{{task.upload}}" height="42" width="42">
+<button class="float-right btn btn-danger ml-3" (click)="Delete()">delete</button>
+
+<a class="float-right btn btn-dark" routerLink="/task/{{task.id}}">details</a>
+</form>
