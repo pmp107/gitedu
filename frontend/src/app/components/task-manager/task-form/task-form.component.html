@@ -1,0 +1,17 @@
+<!-- <div>
+    <a class="btn btn-dark float-right mb-3" routerLink="/login">logout</a>
+</div> -->
+
+<form (submit)="Add($event)">
+<!-- <div class="form-group">
+    <label for ="task">Enter task Title</label>
+    <input type="text" name="title" id="task" class="form-control" [(ngModel)]="title">
+</div> -->
+<div class="form-group">
+    <label for ="task">Upload</label>
+    <input type="file" name="upload" id="task" class="form-control" [(ngModel)]="upload">
+</div>
+
+<button class="btn btn-danger">Add Task</button>
+
+</form>

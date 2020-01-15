@@ -1,0 +1,35 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<div class="nav">
+    <div class="topnav">
+        <a class=" fa fa-home " aria-hidden="true"  href="#home">Home</a>
+        <a routerLink="aboutus">About Us</a>
+        <a  class="fa fa-phone" aria-hidden="true" routerLink="contactus">Contact</a>
+        <input type="text" placeholder="Search..">
+
+        
+        <a class="navbar-brand" routerLink="login" *ngIf="!loggedIn">LOGIN</a>
+        <a routerLink="/signup" class="navbar-brand"  *ngIf="!loggedIn"> REGISTER </a>
+        
+  
+        <a class="navbar-brand" href="#" (click)="logout($event)" *ngIf="loggedIn">LogOut</a>
+  
+        <!-- <a class="navbar-brand" href="#" (click)="logout($event)" *ngIf="loggedIn">Logout</a> -->
+        <a class="navbar-brand" routerLink="profile" *ngIf="loggedIn">Profile</a>
+
+        <!-- <a routerLink="addUser">Register</a>
+
+        <a routerLink="login">Login</a> -->
+
+
+    </div>
+    <div class="topnav1">
+
+      
+    </div>
+</div>
+    
+   

@@ -1,0 +1,9 @@
+.container{
+  background-image: url("./../assets/bg5.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width:150%;
+  height: 100%;
+  margin: 115px 0 0px 70px ;
+  position: fixed;
+}
