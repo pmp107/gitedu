@@ -1,0 +1,90 @@
+
+<div class="container sticky-top hidesidebar"  >
+  <div class="row justify-content-center">
+    <div class="container-fluid" >
+        <div class = "row"  style="border-radius: 25px;">
+          <img src="http://localhost:8000/uploads/profile/{{this.myuser.profile_image}}" style="width:150px; height:150px; float:left;
+          border-radius:50%; margin-top:20px; margin-right:25px;margin-left:35px;"><br>
+          </div>
+          <div class="row " >
+          <h2 style="margin-left:32px;margin-top:10px;"> {{myuser.firstname|titlecase}} {{myuser.lastname|titlecase}} </h2>
+        </div>
+          <!-- <form #loginForm=ngForm (ngSubmit)="onSubmit()" enctype="multipart/form-data" style="margin-left:90px;">
+              <label>Update profile Picture</label><br>
+              <input type="file" name="profile_image" onchange="javascript:$(this).siblings('input[type=submit]').click();">
+              <input type="submit" class="pull-left btn btn-sm btn-primary" style="display:none;margin-top:7px;"><br>
+          </form> -->
+          <div class = "row">
+          <span style="margin-left:32px;margin-top:10px;"><label class="btn btn-primary upload-btn" style="background: #f3f3f3;color: #2e2b2b;">
+            Upload Profile Image<input type="file" name="profile_image" hidden multiple (change)="uploadFile($event)">
+          </label>
+          </span>
+          </div>
+          <nav class="navbar navbar-expand-sm bg-primary navbar-dark rounded" style="margin-top: 5px;">
+      
+              <!-- Links -->
+              <ul class="navbar-nav">
+             
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle"  id="navbardrop" data-toggle="dropdown">
+                      <span class="badge badge-light" *ngIf = "nameList.length > 0">{{nameList.length}}</span>
+                    Friend List
+                  </a>
+                  <div class="dropdown-menu" *ngIf = "nameList.length > 0">
+                      <div class="row">
+                          <table class="dropdown-item" *ngIf = "nameList.length > 0">
+                            
+                            <tbody>
+                              <tr *ngFor="let item of nameList" >
+                                <td>
+                                    <img src="http://localhost:8000/uploads/profile/{{item.profile_image}}" style="width:25px; height:25px; float:left;
+                                     margin-top:0px; margin-right:5px;margin-left:10px;"><br>
+                                </td>
+                              <td>
+                                  {{item.firstname|titlecase}} {{item.lastname  |titlecase}}
+                              </td>
+                              <td>
+                                  <a style="margin-left:10px;" class="btn btn-outline-primary btn-sm" (click)="unfriend(item)">UnFriend</a>
+                              </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+      
+                  </div>
+                </li>
+              </ul>
+            </nav>
+            <!-- <div class="row">
+                <table *ngIf = "FRList.length > 0">
+                  <thead >
+                    <tr>
+                      <td colspan="3"><strong><h4>Friend Requests</h4></strong></td>
+                    </tr>
+                   </thead>  
+                  <tbody>
+                    <tr *ngFor="let item of FRList" >
+                      <td>
+                          <img src="http://localhost:8000/uploads/profile/{{item.profile_image}}" style="width:25px; height:25px; float:left;
+                           margin-top:0px; margin-right:5px;margin-left:10px;"><br>
+                      </td>
+                    <td>
+                        {{item.firstname|titlecase}} {{item.lastname  |titlecase}}
+                    </td>
+                    <td >
+                        <a style="margin-left:10px;" class="btn btn-outline-primary btn-sm" (click)="acceptfriend(item)" >Accept</a>
+                    </td>
+                    <td>
+                        <a style="margin-left:10px;" class="btn btn-outline-danger btn-sm" (click)="rejectfriend(item)" >Reject</a>
+                    </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div> -->
+    </div>
+    </div>
+</div>
+<div class="container-fluid" >
+  
+</div>

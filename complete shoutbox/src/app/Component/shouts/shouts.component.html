@@ -1,0 +1,102 @@
+<div class="container-fluid">
+  <div class="row" style="background:whitesmoke; height:200px; border-radius: 15px; margin-top:5px">
+    <div class="col-12">
+      <!-- <i class="far fa-smile"></i> -->
+      <div class="form-group mt-2">
+        <i class="far fa-smile-beam fa-2x"></i>
+        <span style="color: darkblue; margin-left: 10px; margin-bottom: 10px;">Good AfterNoon,Whats in your
+          Mind...</span>
+        <textarea style="margin-top:3px;" class="form-control" placeholder="Shout Here..." rows="3" id="post"
+          name="text" [(ngModel)]="shout.description"></textarea>
+      </div>
+      <!-- <span style="margin-left:32px;margin-top:10px;"><label   class="fas fa-images fa-2x" style="background: #f3f3f3;color: #2e2b2b;">
+                           <input type="file" name="image_upload" hidden multiple (change)="uploadFile($event)">
+                          </label>
+                          </span>
+                          <span style="margin-left:32px;margin-top:10px;"><label  class="fa fa-video fa-2x" style="background: #f3f3f3;color: #2e2b2b;">
+                              <input type="file" name="video_upload" hidden multiple (change)="uploadFile($event)">
+                             </label>
+                         </span> -->
+
+
+      <form [formGroup]="feedform" (ngSubmit)="postShout()">
+        <div class="float-left">
+          <input type="file" #myfile accept="image/png, image/jpeg, 
+                video/mp4, video/3gp, video/mkv, image/gif, audio/mp3,
+                video/3gp, video/mkv, video/mp4, application/pdf,
+                application/doc, application/xslx, application/ppt,
+                application/txt, image/jpeg,image/bmp" max-size="10MB video/mp4, 2048KB image/*" name="image_upload"
+            (change)="uploadFile($event)">
+        </div>
+        <div class="float-right">
+          <button type="submit" class="fa fa-bullhorn fa-2x rounded"></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" *ngIf="shoutList.length > 0">
+  <div class="row mt-2" *ngFor="let item of shoutList">
+
+    <div class="col-12" style="border-radius:90%;">
+      <div class="card">
+        <div>
+          <img src="http://localhost:8000/uploads/profile/{{item.profile_image}}" style="width:25px; height:25px; float:left;
+               border-radius:50%;margin-top:0px; margin-right:5px;margin-left:10px;">
+          <strong style="color: darkblue;">&nbsp;&nbsp;&nbsp;{{item.firstname | titlecase}}
+            {{item.lastname | titlecase}}</strong> &nbsp;<i>posted at:</i>
+          {{item.created_at}}
+          <span style="color:red;" *ngIf='item.reported == 1'>Reported Shout</span>
+        </div>
+        <div class="card-body text-muted fontify" style="min-height:100px; border-radius: 30px;">
+
+
+          <!--<div class="groove">
+                  Caption here...
+                </div> -->
+                <div>
+          <h5 class="card-title " *ngIf='item.description != null' >
+            {{item.description}}
+          </h5>
+        </div>
+          
+          <div class="make-center">
+          <img *ngIf='item.content_type =="image"' src="http://localhost:8000/files/{{item.path}}" style="width:100%;  float:center;
+               margin-top:0px;">
+          <video *ngIf='item.content_type == "video"'  style="width:100%;  float:center;
+          margin-top:0px;" controls>
+          <source src="http://localhost:8000/files/{{item.path}}" type="video/mp4">
+          </video>
+          </div>
+        </div>
+
+        <div class="card-footer text-muted">
+          <a href="" (click)="likeCount(item)" class="fas fa-thumbs-up fa-2x">
+            <!-- <span class="badge badge-light">{{item.like}}</span> -->
+          </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="" (click)="likeCount(item)" class="fas fa-thumbs-down fa-2x">
+            <!-- <span class="badge badge-light">{{item.dislike}}</span> -->
+          </a>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a (click)="report(item)" class=" fa fa-flag fa-2x"></a>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div class="container-fluid" *ngIf="shoutList.length == 0">
+  <div class="row mt-2">
+    <div class="col-2"> </div>
+    <div class="col-8 h3 text-light rounded bg-secondary make-center" style="height:150px;">
+      No Shouts Available
+    </div>
+    <div class="col-2">
+    </div>
+  </div>
+</div>

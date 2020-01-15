@@ -1,0 +1,108 @@
+    <nav class="navbar navbar-light bg-light  justify-content-between" style="color:seashell;background:royalblue !important;" >
+        <div class="fa fa-bullhorn fa-3x">  
+            <a class="navbar-brand" style="margin-left:10px;font-family: bold;"><h2>ShoutBOX</h2></a>
+            </div>
+        
+            
+        <div>
+            <nav class="navbar navbar-expand-sm  navbar-dark rounded navbar-brand" style="margin-top: 5px;"*ngIf=loggedIn>
+            
+                <!-- Links -->
+                <ul class="navbar-nav">
+               
+                  <!-- Dropdown -->
+                  <li class="nav-item dropdown">
+                   
+                      <!-- <i class="far fa-bell fa-2x"></i> -->
+                    <a class="nav-link dropdown-toggle"  id="navbardrop" data-toggle="dropdown">
+                        <span class="badge badge-light" *ngIf = "FRList.length > 0">{{FRList.length}}</span>
+                      Friend Requests
+                    </a>
+                    <div class="dropdown-menu" *ngIf = "FRList.length > 0">
+                      <!-- <a class="dropdown-item" href="#">link1</a>
+                      <a class="dropdown-item" href="#">Link 2</a>
+                      <a class="dropdown-item" href="#">Link 3</a> -->
+                      <div class="row">
+                        <table class="dropdown-item" *ngIf = "FRList.length > 0">
+                          
+                          <tbody>
+                            <tr *ngFor="let item of FRList" >
+                              <td>
+                                  <img src="http://localhost:8000/uploads/profile/{{item.profile_image}}" style="width:25px; height:25px; float:left;
+                                   margin-top:0px; margin-right:5px;margin-left:10px;"><br>
+                              </td>
+                            <td>
+                                {{item.firstname|titlecase}} {{item.lastname  |titlecase}}
+                            </td>
+                            <td >
+                                <a style="margin-left:10px;" class="btn btn-outline-primary btn-sm" (click)="acceptfriend(item)" >Accept</a>
+                            </td>
+                            <td>
+                                <a style="margin-left:10px;" class="btn btn-outline-danger btn-sm" (click)="rejectfriend(item)" >Reject</a>
+                            </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+        
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+        <a routerLink="/Login" style="color:seashell;"  class="navbar-brand" *ngIf=!loggedIn>Login</a>
+        <div class="navbar-brand" style="color:seashell;" *ngIf=loggedIn>{{myuser.firstname |titlecase}}</div>
+        <a href="#" (click)="logout($event)" class="navbar-brand" *ngIf=loggedIn> &nbsp;&nbsp;Logout</a>
+        <a routerLink="/signup" style="color:seashell;" class="navbar-brand" *ngIf=!loggedIn>Signup</a>
+        </div>
+      </nav>
+         
+
+<!-- 
+         <nav class="navbar navbar-light bg-light justify-content-between sticky-top" style="color:seashell;background:royalblue !important;" >
+      
+            <div class="fa fa-bullhorn fa-3x">  
+            <a class="navbar-brand" style="margin-left:10px;font-family: bold;"><h2>ShoutBOX</h2></a>
+            </div>
+              <!-- <div class="searchbar">
+            
+             
+              <input class="search_input" type="search" name="name" [(ngModel)]="name" placeholder="Search..." *ngIf=loggedIn>
+              <a href="#" class="search_icon" style="color:seashell;" (click)="searchUser($event)" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-search"></i></a>
+            </div> -->
+           
+              <!-- <div>
+                  <nav class="navbar navbar-expand-sm bg-primary navbar-dark rounded navbar-brand" style="margin-top: 5px;">
+            
+                      <!-- Links -->
+                      <!-- <ul class="navbar-nav"> -->
+                     
+                        <!-- Dropdown -->
+                        <!-- <li class="nav-item dropdown"> -->
+                            <!-- <i class="far fa-bell fa-2x"></i> -->
+                          <!-- <a class="nav-link dropdown-toggle"  id="navbardrop" data-toggle="dropdown">
+                            Friend Requests
+                          </a>
+                          <div class="dropdown-menu">
+                             <a class="dropdown-item" href="#">link1</a>
+                            <a class="dropdown-item" href="#">Link 2</a>
+                            <a class="dropdown-item" href="#">Link 3</a>
+              
+<!--               
+                          </div>
+                        </li>
+                      </ul>
+                    </nav>
+              <a routerLink="Login" style="color:seashell;"  class="navbar-brand" *ngIf=!loggedIn  class="fas fa-sign-in-alt fa-2x"></a>
+              <div class="navbar-brand" style="color:seashell;" *ngIf=loggedIn>
+               {{myuser.firstname |titlecase}} 
+           
+              </div>
+              <a href="#" (click)="logout($event)" class="navbar-brand" *ngIf=loggedIn  class="fas fa-sign-out-alt fa-2x">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+              </a>
+              <a routerLink="signup" style="color:seashell; margin-left: 30px;" class="navbar-brand" *ngIf=!loggedIn  class="fas fa-user-plus fa-2x">&nbsp;&nbsp;&nbsp;</a>
+              </div>
+            </nav> -->
+              
+      
+      
+       

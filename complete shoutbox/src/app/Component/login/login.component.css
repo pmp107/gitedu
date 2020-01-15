@@ -1,0 +1,15 @@
+
+.banner-position.banner{
+
+    background-image: url("/assets/login_background5.jpg");
+}
+.banner-position{
+    background-position: center center;
+    position:relative;
+    background-repeat:no;
+    min-height:720px;
+    background-size: cover;
+}
+.banner-back{
+    width:100%;
+}

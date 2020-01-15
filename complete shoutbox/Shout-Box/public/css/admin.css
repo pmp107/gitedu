@@ -1,0 +1,198 @@
+
+.statistics-section-title-area{
+
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    position: relative;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+    color: white;
+}
+.statistics-icon{
+        background:grey;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        line-height: 70px;
+        margin: auto;
+}
+.section-statistics{
+        background-color:rgb(0, 46, 100);
+        background-size: cover;
+        position: relative;
+}
+.inner-statistics-section{
+   
+    box-shadow: black;
+    border: 1px solid #fff;
+    padding: 4px;
+
+}
+p.counter {
+    color: #fff;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+}
+p.statistics-para-text{
+    font-size: 15px;
+	color: #ccc;
+}
+html, body {
+    color: #fff;
+    background:white;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    height: 120%;
+    margin: 0;
+}
+.nav-bar {
+    background: #008b8b;
+    height: 62px;
+    color: white;
+    
+}
+.top-right {
+    position: absolute;
+    background: #008b8b;
+    right: 10px;
+    top: 18px;
+    
+}
+
+.top-left {
+    position: absolute;
+    background: #008b8b;
+    left: 10px;
+    top: 18px;
+}
+
+.content {
+    border:1px solid #008b8b;
+    padding:10%;
+    background:white;
+    color:black;
+    position:absolute;
+    top:20%;
+    left:30%;
+    text-align: center;
+}
+.links > a {
+    color: white;
+    padding: 0 25px;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    display:inline;
+}
+a.disabled {
+    color: #636b6f;
+    pointer-events: none;
+    cursor: default;
+}
+body{
+    color: #fff;
+    background:lightgrey;
+    min-height: min-content;
+    font-family: 'Roboto', sans-serif;
+}
+.form-control{
+    height: 40px;
+    box-shadow: none;
+    color: #969fa4;
+}
+.form-control:focus{
+    border-color: #5cb85c;
+}
+.form-control, .btn{        
+    border-radius: 3px;
+}
+.signup-form{
+    width: 400px;
+    margin: 0 auto;
+    padding: 110px 0;
+}
+.signup-form h2{
+    color: #636363;
+    margin: 0 0 15px;
+    position: relative;
+    text-align: center;
+}
+.signup-form h2:before, .signup-form h2:after{
+    content: "";
+    height: 2px;
+    width: 30%;
+    background: #d4d4d4;
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+}	
+.signup-form h2:before{
+    left: 0;
+}
+.signup-form h2:after{
+    right: 0;
+}
+.signup-form .hint-text{
+    color: #999;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.signup-form form{
+    color: #999;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    background: #f2f3f7;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+.signup-form .form-group{
+    margin-bottom: 20px;
+}
+.signup-form input[type="checkbox"]{
+    margin-top: 3px;
+}
+.signup-form .btn{        
+    font-size: 16px;
+    font-weight: bold;		
+    min-width: 140px;
+    outline: none !important;
+}
+.signup-form .row div:first-child{
+    padding-right: 10px;
+}
+.signup-form .row div:last-child{
+    padding-left: 10px;
+}    	
+.signup-form a{
+    color: #fff;
+    text-decoration: underline;
+}
+.signup-form a:hover{
+    text-decoration: none;
+}
+.signup-form form a{
+    color: #5cb85c;
+    text-decoration: none;
+}	
+.signup-form form a:hover{
+    text-decoration: underline;
+} 
+
+.form-radio{
+    display:inline;
+    margin-left:25px;
+}
+.radio label {
+    padding-left: 0px;
+}
+.invalid-feedback{
+    color:red;
+}
+.make-center{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}

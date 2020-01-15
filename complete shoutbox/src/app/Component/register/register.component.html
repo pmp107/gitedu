@@ -1,0 +1,206 @@
+<!-- <div class="row mt-3">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6 example">
+     <div class="form-group col-sm-12">
+        <h2>Create an account !!</h2>
+     </div>
+
+     <div id="regform">
+     <form #signupForm="ngForm" (ngSubmit)="onSubmit()">
+         <div class="alert alert-danger" [hidden]="!error">
+            {{error}}
+         </div>
+        <div class="form-row">
+           <div class="form-group col-sm-6">
+              <input type="text"  minlength=3 maxlength=10 required class="form-control"  
+              name="fname"  placeholder="Firstname" [(ngModel)]="form.firstname" pattern="[a-zA-Z][a-zA-Z]+">
+              
+           </div>
+            <div class="form-group col-sm-6">
+              <input type="text"  minlength=3 maxlength=10 required class="form-control"   
+               name="lname" placeholder="Lastname"  pattern="[a-zA-Z][a-zA-Z]+" [(ngModel)]="form.lastname">
+             
+           </div>
+        
+        </div>
+
+        
+        <div class="form-group">
+          
+           <input type="email" #email="ngModel" required class="form-control" 
+           ngModel name="email" placeholder="Email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" [(ngModel)]="form.email">
+           
+        </div>
+      
+      
+        <div class="form-group" >
+        
+         <input name="password"  type="password" placeholder="Password" class="form-control"
+         [(ngModel)]="form.password" required >
+        
+           </div>
+           <div class="form-group" > 
+               <input  type="password" name="confirm_password" placeholder="Confirm Password"  appConfirmEqualValidator="password"  class="form-control"
+               [(ngModel)]="form.confirm_password" required>
+              
+                 </div>
+        <div class="form-group">
+           
+           <input type="tel" placeholder="Tel"  pattern="[789][0-9]{9}" class="form-control" name="contact_no" 
+           [(ngModel)]="form.contact_no" required >
+
+           
+        </div>
+        <div class="form-group">
+              Date of Birth:
+              <input type="date"  name="dob" class="form-control" [(ngModel)]="form.dob" required >     
+        </div>
+
+
+        <div class="form-group">
+           Gender:
+           <label class="radio-inline"><input type="radio" name="gender"  [(ngModel)]="form.gender" value="male" checked>Male</label>
+           <label class="radio-inline"><input type="radio" name="gender" [(ngModel)]="form.gender" value="female" >Female</label>
+        </div>
+        <div class="form-row">
+           <div class="form-group col-md-6">
+              
+              <input type="text" placeholder="city"  class="form-control" [(ngModel)]="form.city" name="city" required>
+           </div>
+           <div class="form-group col-md-6">
+              <input type="text" placeholder="state" class="form-control" [(ngModel)]="form.state" name="state" required>
+           </div>
+         
+        </div>
+        <div class="form-group">
+              <input type="text" placeholder="country" class="form-control" [(ngModel)]="form.country" name="country" required>
+        </div>
+        <div>
+           <button type="submit" [disabled]="!signupForm.valid" class="btn btn-primary">Sign Up</button>
+        </div>
+     </form> 
+  </div>
+  </div>
+  <div class="col-3">
+  </div>
+</div>   -->
+<app-header></app-header>
+
+
+         <div class="alert alert-success" [hidden]="!success">
+               {{this.success}}
+            </div>
+            <div class="row banner-position banner">
+               <div class="col-sm-7 ">
+                  <div class="row" style="height:400px;">
+                    
+                      <div class="col-sm-9" style="top:120px;">
+                         
+                      </div>
+             
+                            <div class="col-sm-3">
+                            </div> 
+                </div>
+                  
+               </div>
+               <div class="col-sm-4 mt-4 content">
+                  <div class="form-group col-sm-12">
+                     <h3>Create an account !!</h3>
+                  </div>
+             
+                  <div id="regform">
+                  <form #signupForm="ngForm" (ngSubmit)="onSubmit()">
+                     <div class="form-row">
+                        <div class="form-group col-sm-6">
+                           <input type="text" #fname="ngModel" minlength=3 maxlength=10 required class="form-control" [class.is-invalid]="fname.invalid && fname.touched" 
+                           name="firstname" ngModel placeholder="Firstname" pattern="[a-zA-Z][a-zA-Z]+" [(ngModel)]="form.firstname">
+                           <div *ngIf="(fname.invalid && fname.touched)">
+                              <small class="text-danger" >firstName is required atleast 3 characters</small>
+                           </div>
+                        </div>
+                        
+                         <div class="form-group col-sm-6">
+                           <input type="text" #lname="ngModel" minlength=3 maxlength=10 required class="form-control"   [class.is-invalid]="lname.invalid && lname.touched"
+                           ngModel name="lastname" placeholder="Lastname"  pattern="[a-zA-Z][a-zA-Z]+" [(ngModel)]="form.lastname"> 
+                           <div *ngIf="(lname.invalid && lname.touched)">
+                              <small class="text-danger" >lastName is required atleast 3 characters</small>
+                           </div>
+                        </div>
+                     
+                     </div>
+             
+                     
+                     <div class="form-group">
+                       
+                        <input type="email" #email="ngModel" required class="form-control" [class.is-invalid]="email.invalid && email.touched"
+                        ngModel name="email" placeholder="Email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" [(ngModel)]="form.email">
+                        <div *ngIf="(email.invalid && email.touched)">
+                           <small class="text-danger">email is required</small>
+                        </div>
+                     </div>
+                   
+                   
+                     <div class="form-group" [class.has-error]="password.touched && password.invalid">
+                     
+                      <input name="password" required type="password" placeholder="Password" class="form-control"
+                      ngModel #password="ngModel" minlength="8" [(ngModel)]="form.password">
+                      <span class="help-block" *ngIf="password.touched && password.errors?.required">
+                        password is required
+                        </span>
+                        </div>
+                        <div class="form-group" [class.has-error]="confirm_password.touched && confirm_password.invalid">
+                            
+                            <input name="confirm_password" placeholder="ConfirmPassword"  appConfirmEqualValidator="password" minlength="8" required type="password" class="form-control"
+                            ngModel #confirm_password="ngModel" [(ngModel)]="form.confirm_password">
+                            <span class="help-block" *ngIf="confirm_password.touched && confirm_password.errors?.required">
+                                confirmPassword is required
+                              </span>
+                              <span class="help-block" *ngIf="confirm_password.errors?.notEqual">
+                              Password doesn't match
+                                </span>
+                              </div> 
+                     <div class="form-group">
+                        
+                        <input type="tel" placeholder="Tel" #contact_no="ngModel" pattern="[789][0-9]{9}" class="form-control"
+                        [class.is-invalid]="contact_no.invalid && contact_no.touched" name="contact_no" ngModel required [(ngModel)]="form.contact_no" >
+             
+                        <div *ngIf="(contact_no.invalid && contact_no.touched)">      
+                           <small class="text-danger" >Phone number must be 10 digits</small>      
+                        </div>
+                     </div>
+                     <div class="form-group">
+                           Date of Birth:
+                           <input type="date" max="2006-12-12"  name="dob" class="form-control" ngModel required [(ngModel)]="form.dob">     
+                     </div>
+             
+             
+                     <div class="form-group">
+                        Gender:
+                        <label class="radio-inline"><input type="radio" #gender="ngModel" ngModel name="gender" value="male"  [(ngModel)]="form.gender" required>Male</label>
+                        <label class="radio-inline"><input type="radio" #gender="ngModel" ngModel name="gender" value="female" [(ngModel)]="form.gender" required>Female</label>
+                     </div>
+                     <div class="form-row">
+                        <div class="form-group col-md-6">
+                           
+                           <input type="text" placeholder="city"  class="form-control" ngModel name="city" required [(ngModel)]="form.city">
+                        </div>
+                        <div class="form-group col-md-6">
+                           
+                           <input type="text" placeholder="state" class="form-control" ngModel name="state" required [(ngModel)]="form.state">
+                        </div>
+                      
+                     </div>
+                     <div class="form-group">
+                           <input type="text" placeholder="country" class="form-control" ngModel name="country" required [(ngModel)]="form.country">
+                     </div>
+                     <div>
+                        <button type="submit" [disabled]="!signupForm.valid" class="btn btn-primary mb-2 rounded">Sign up</button>
+                     </div>
+                  </form> 
+               </div>
+               </div>
+                <div class="col-1">
+               </div> 
+             </div> 
+             
+            

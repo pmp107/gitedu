@@ -1,0 +1,49 @@
+  /* background-image: url("/assets/MAJOR_Register.jpg"); */
+
+.banner-position.banner{
+  width: inherit;
+  background-image: url("/assets/MAJOR_Register.jpg");
+}
+.banner-position{
+  width: auto;
+  
+  background-position: center center;
+  position:relative;
+  background-repeat:no;
+  min-height:710px;
+  background-size: cover;
+  
+}
+.banner-back{
+  width:100%;
+}
+.content {
+    /* position: absolute;
+    bottom: 0; */
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1;
+    width: 100%;
+    border-radius: 5px;
+    /* padding: 20px; */
+  }
+
+  /* img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  } */
+
+  /* .bglogo{ */
+      /* friends wala image
+       background-image: url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"); */
+      /* background-image: url("https://images-platform.99static.com/L8-DKxWVDCPob6k95qn75gdWHOc=/20x45:930x955/500x500/top/smart/99designs-contests-attachments/72/72395/attachment_72395224"); */
+      /* background-image: url("https://img.pngio.com/shout-out-png-7-png-image-png-shout-out-1024_616.png");
+   */
+        /* background-image: url("https://apps.shopifycdn.com/listing_images/4dfe2b80b09e76850249af24692e6506/icon/a4f428e75c52a5ae1594febdbca22bec.png");
+         */
+         /* background-image: url("https://pro-bee-user-content-eu-west-1.s3.amazonaws.com/public/users/Integrators/5eb55a21-9496-46ce-8161-f092fc9def23/eanesisdnet/editor_images/Shout-Outs-Callout.gif"); */
+    /* background-image: url("https://image.winudf.com/v2/image1/Y29tLnNob3V0b3V0LmFkbWluLmdvdG91cl9pY29uXzE1NTkxNjU0MjNfMDMz/icon.png?w=170&fakeurl=1"); */
+     
+    /* background-image: url("/assets/MAJOR_Register.jpg");
+}  */

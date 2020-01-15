@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-sm  rounded " style="margin-top:5px; background-color:lightsteelblue">
+    
+      <input class="form-control mr-sm-2" type="text" name="search" [(ngModel)]="name" placeholder="Search">
+      <button class="btn btn-success" (click)="searchUser($event)" style="margin-top:5px;">Search</button>
+    
+  </nav>
+  
+      <!-- <input type="text" class="form-control" name="search" [(ngModel)]="name" id="search" placeholder="search">
+      <a href="#" class="search_icon" (click)="searchUser($event)"><i class="fas fa-search"></i></a>
+     -->
+
+
+
+
+<div class="container-fluid sticky-top" >
+    <!-- <div class="row ">
+      <div class="searchbar">
+        <input class="search_input" type="search" name="name" [(ngModel)]="name" placeholder="Search...">
+        <a href="#" class="search_icon" (click)="searchUser($event)"><i class="fas fa-search"></i></a>
+      </div>
+      </div>  -->
+    <div class="row">
+        <table *ngIf = "nameList.length > 0">
+            
+            <tbody>
+                <tr *ngFor="let item of nameList" >
+                  <td>
+                      <img src="http://localhost:8000/uploads/profile/{{item.profile_image}}" style="width:20px; height:20px; float:left;
+                      border-radius:50%; margin-top:0px; margin-right:5px;margin-left:10px;"><br>
+                  </td>
+                <td>
+                    {{item.firstname|titlecase}} {{item.lastname |titlecase}}
+                </td>
+                <td >
+                    <a style="margin-left:10px;" class="btn btn-outline-primary btn-sm" *ngIf ="item.friendship_status == null"(click)="sendRequest(item)" >Add Friend </a>
+                    <a style="margin-left:10px;" *ngIf ="item.friendship_status == 'pending'">Request pending</a>
+                    <a style="margin-left:10px;" class="btn btn-outline-primary btn-sm" *ngIf ="item.friendship_status == 'friend'"(click)="unfriend(item)" >UnFriend</a>
+                </td>
+                
+                </tr>
+             </tbody>
+            </table>
+    </div>
+  </div>

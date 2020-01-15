@@ -1,0 +1,9 @@
+@media screen and (max-width: 768px) {
+    div.hidesidebar {
+    display: none;
+    }
+  }
+
+  .navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 1);
+}
