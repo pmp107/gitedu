@@ -1,0 +1,24 @@
+.card{
+    background-image: url("../../../assets/b2.jpg");
+    border-radius: 25px;
+    border: 4px solid #FFFFFF;
+}
+
+.color1{
+    color: #ffffff;
+}
+.card-header{
+    text-align: center;
+}
+.font1{
+    font-size: 18px;
+}
+/* 
+.cls2{
+    background-image: url("../../../assets/b3.jpg");
+  
+} */
+.disabled {
+    pointer-events: none; 
+    display: none; 
+  }

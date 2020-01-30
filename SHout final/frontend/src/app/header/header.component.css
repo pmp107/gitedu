@@ -1,0 +1,35 @@
+header{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height:100px;
+  width: 100%;
+  background-color: #000000;
+  /* background-image:url("../../assets/h2.jpg"); */
+  /* background-repeat: no-repeat;
+   */
+
+}
+
+
+.head{
+  position: sticky;
+  width: 100%;
+  color:#ffffff;
+  /* line-height: 40px; */
+  /* font-size: 30px; */
+  text-align: center;
+
+  /* bottom:0; */
+}
+.title{
+font-size: 50px;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+img{
+height:70px;
+width: 130px;
+
+float: left;
+}

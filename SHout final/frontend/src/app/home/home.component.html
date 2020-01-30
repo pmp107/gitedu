@@ -1,0 +1,37 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<div class="nav">
+    <div class="topnav">
+        <a href="#home">Home</a>
+        <a routerLink="aboutus">About Us</a>
+        <a routerLink="contactus">Contact Us</a>
+        <!-- <input type="text" style="color: #000000;"  placeholder="Search.."> -->
+
+        
+        <a style="float: right;"  routerLink="/login" *ngIf="!loggedIn">Login</a>
+        <a style="float: right;" routerLink="/signup" *ngIf="!loggedIn"> Register </a>
+        
+  
+        <a  routerLink="user" *ngIf="loggedIn">Feeds</a>
+        <!-- <a class="navbar-brand" href="#" (click)="logout($event)" *ngIf="loggedIn">Logout</a> -->
+        <a  routerLink="userProfile" *ngIf="loggedIn">Profile</a>
+       
+
+        <a  href="#" (click)="logout($event)" *ngIf="loggedIn" style="float:right;">LogOut</a>
+
+        <!-- <a routerLink="addUser">Register</a>
+
+        <a routerLink="login">Login</a> -->
+
+        
+    
+    </div>
+
+    <h1 class="adjust">"We love social media because it exists at the intersection of humanity and technology..."</h1>
+    <!-- <h1 class="adjust1">Content is fire and social media is gasoline</h1> -->
+<h1 class="adjust1">"Social media is addictive precisely because it gives us something which the real world locks: is gives us immediacy, direction and value as an individual..."</h1>
+
+</div>

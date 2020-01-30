@@ -1,0 +1,163 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<div>
+  <header class="site-header"></header>
+
+  <div class="cover-photo"></div>
+  <div class="body ">
+    <section class="left-col user-info">
+      <div class="profile-avatar">
+        <div class="inner"></div>
+      </div>
+      <h1>{{curuser.name}}</h1>
+      <h2>{{curuser.email}}</h2>
+      <div class="meta">
+        <p><i class="fa fa-fw fa-map-marker"></i> India</p>
+        <p><i class="fa fa-fw fa-link"></i> Shoutbox.com</p>
+        <p><i class="fa fa-fw fa-clock-o"></i> {{curuser.created_at}}</p>
+      </div>
+    </section>
+
+    <section class="section center-col content">
+      <nav class="profile-nav">
+        <a [routerLink]="['/upload']"> <b>POST</b> </a>
+      </nav>
+
+
+
+
+
+      <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+      <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+      <!------ Include the above in your HEAD tag ---------->
+      
+      <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"> -->
+      
+      <tr *ngFor="let post1 of post11">
+        <div *ngIf="post1.u_id==curuser.id">
+
+      <div class="profilecontainer">
+      
+        <div class="row">
+          <div class="col-lg-3 col-sm-6">
+      
+                  <div class="card hovercard">
+                     
+                     
+                      <div class="info ">
+                         
+                          <h1>{{curuser.name}}</h1> 
+                        
+                          <div class="desc">
+                          
+                            <img src="../assets/images/{{post1.image}}" height="350px" width="350px" />
+                          </div>
+                          <div class="desc">{{post1.post_id}}</div>
+                          <div class="desc">{{post1.post}}</div>
+                          <div class="desc">{{post1.u_id}}</div>
+                          <div class="desc">{{post1.image}}</div>
+                          <div class="desc">{{post1.created_at}}</div>
+               
+
+                      </div>
+                     
+                  </div>
+      
+              </div>
+      
+        </div>
+      </div>
+
+        </div>
+     
+      </tr>
+    
+    </section>
+    <section class="right-col">
+      <div class="search">
+        Search<input type="text" [(ngModel)]="serchText">
+        {{filter}}
+    </div>
+      <h3 >Suggested friendlist</h3>
+    
+      <div *ngFor="let user of users|searchText:serchText" style="font-size: x-large;">
+
+        <div *ngIf="curuser.id!=user.id">
+
+      <div class="b3"> {{user.name}}</div>
+         
+  
+<div class="b2">
+  
+          <button type="submit" (click)="addfrnd(user.id)">Add friend</button>
+        </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+</div>
+
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/67239/masonry.pkgd.min.js"></script>
+<script type="text/javascript" src="//use.typekit.net/psm0wvc.js"></script>
+<script type="text/javascript">try { Typekit.load(); } catch (e) { }</script>
+
+
+
+
+
+<!-- <div>
+{{curuser.id}}
+{{curuser.name}}
+{{curuser.email}}
+
+
+
+  </div>
+
+
+  {{csrf_token}}
+<div class="row">
+    <div class="col">
+        <div *ngFor="let user of users">
+         
+                <div *ngIf="curuser.id!=user.id">
+              
+                  {{user.name}}
+                  <button type="submit" (click)="addfrnd(user.id)">Add friend</button>
+        </div>
+                
+            
+    </div>
+
+    </div>
+</div> -->
+
+
+
+
+
+
+<!-- <div class="profile">
+  <div class="card " style=" width: 40%;">
+
+    <img src='./../assets/bg3.jpg' alt="Avatar" style="width:50px;height: 50px; text-align: center;">
+    <div class="zoom"></div>
+    <div class="container">
+      <br><br><br>
+      <button [routerLink]="['/user']">userprofile</button>
+      <h4><b>{{username}}</b></h4>
+    <p>{{friend_id}}</p>
+    <p>{{email_id}}</p>
+
+
+
+
+    </div>
+  </div> -->

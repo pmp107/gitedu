@@ -1,0 +1,29 @@
+.color1{
+    color: #022668;
+    
+
+}
+.font1{
+    font-size: 22px;
+    color: #000000;
+    
+}
+
+
+img{
+
+    position: absolute;
+    top: 80px;
+    right: 100px;
+    font-size: 18px;
+    height: 40%;
+
+
+}
+
+.adjust{
+/* padding-left: 150px;
+    padding: 70px; */
+    margin-top: 20px;
+    margin-left: 100px;
+}
